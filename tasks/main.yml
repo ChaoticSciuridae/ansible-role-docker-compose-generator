@@ -27,6 +27,7 @@
       {% if service_name == "99-tle" %}
       {{ lookup('template', file.src) }}
       {% else %}
+      # ------------------------- {{ service_name }} -------------------------
       {{ lookup('template', file.src)
          | regex_replace('^(---|services:)\s*\n*', '')
          | regex_replace('^', '  ') }}
