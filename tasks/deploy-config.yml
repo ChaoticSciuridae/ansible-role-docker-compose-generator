@@ -42,3 +42,5 @@
     owner: "{{ docker_compose_generator_uid }}"
     group: "{{ docker_compose_generator_gid }}"
   loop: "{{ config_files.files }}"
+  loop_control:
+    label: "{{ config_dest }}/{{ item.path | basename }}"
